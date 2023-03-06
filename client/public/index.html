@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+     <link
+   rel="stylesheet"
+   href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/style.css" />
+    <script src=
+        "particles.js-master/particles.js">
+    </script>
+    <script src=
+        "/particles.js-master/demo/js/app.js">
+    </script>
+    <style>
+
+
+/* I wrote this in Sass, but there are functions that CodePen’s Sass version doesn’t currently support, so I’m using the output CSS here instead. */
+
+
+
+
+.gifContainer{
+  height: 100vh;
+  overflow: hidden;
+ 
+  /* position: fixed; */
+  background: black;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+
+
+
+    </style>
+    <title>Brain Star Technologies</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>  
+     <div id="gifContainer" class="gifContainer">
+   <!-- Loader Wrapper -->
+<div class="loader-wrapper">
+  <!-- Loader -->
+  <div class="loader">
+
+    <!-- Particles -->
+    <div id="particles-js"></div>
+
+    <!-- Loader face -->
+    <div class="loader--face">
+
+      <!-- Loader face smile -->
+      <svg class="loader--face--smile" viewBox="25 25 50 50">
+        <circle cx="50" cy="50" r="20" fill="none" stroke="#64FFFE" stroke-width="2" />
+      </svg><!-- ./Loader face smile -->
+
+      <!-- Loader face eyes -->
+      <div class="loader--face--eyes">
+        <span></span>
+        <span></span>
+      </div><!-- ./Loader face eyes -->
+    </div><!-- ./Loader face -->
+  </div><!-- ./Loader -->
+</div><!-- ./Loader Wrapper -->
+
+<!--
+- Design is inspired by work of @glebich
+- https://dribbble.com/shots/5276094-Smile-loader-for-AI-product-design
+-->
+</div>
+      </div>
+      
+    <div id="root">
+  
+    </div>
+  </body>
+</html>
+<script>
+  particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 1200,
+      "density": {
+        "enable": true,
+        "value_area": 300
+      }
+    },
+    "color": {
+      "value": "#64fffe"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#0300cc"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 1,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 6,
+        "opacity_min": 0.5914085914085914,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 1.5,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 4,
+        "size_min": 0.1,
+        "sync": true
+      }
+    },
+    "line_linked": {
+      "enable": false,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 0.1,
+      "direction": "top",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": true,
+      "attract": {
+        "enable": true,
+        "rotateX": -200,
+        "rotateY": -200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "bubble"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 250,
+        "size": 0,
+        "duration": 2,
+        "opacity": 0,
+        "speed": 1
+      },
+      "repulse": {
+        "distance": 400,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+</script>

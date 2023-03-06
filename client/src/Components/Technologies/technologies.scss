@@ -1,0 +1,242 @@
+  :root {
+      --yellow: #F5C32C;
+      --orange: #BC2C33;
+      --yellowish: #bc2c337a;
+      --black: #242D49;
+      --gray: #788097;
+      --blueCard: #DDF8FE;
+      --purple: rgb(238 210 255);
+      --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+      --orangeCard: rgba(252, 166, 31, 0.45);
+      --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  }
+
+  .skill {
+      // padding: 0 0 0 0;
+      position: relative;
+      width: 95rem;
+    //    margin-left: 0 !important;
+    margin-bottom: 6rem;
+  }
+
+  .skill-bx {
+      background: var(--black);
+      border-radius: 64px;
+      text-align: center;
+      padding-bottom: 60px;
+    //   margin-top: 5rem;
+      margin-left: -12rem;
+  }
+
+  .skill h2 {
+      color: whitesmoke;
+      font-size: 45px;
+      font-weight: 700;
+  }
+
+  .skill-slider {
+      .image__container {
+          position: absolute;
+          //  left: 50%;
+          //  transform: translateX(-50%);
+          border-radius: 50%;
+          overflow: hidden;
+          transition: 0.4s;
+          //   top: -50px;
+          width: 200px;
+          height: 200px;
+
+          //  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+          img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              -webkit-transition: -webkit-transform 1s;
+
+              &:hover {
+                  -webkit-transform: rotate(360deg) translateZ(0);
+              }
+          }
+      }
+  }
+
+  .arrowContainer {
+      margin-left: 65rem;
+  }
+
+  .sliderArrow {
+      color: #ffffff;
+      background: #0800006b;
+      z-index: 100;
+      height: 4rem;
+      width: 4rem;
+      position: absolute;
+      border-radius: 50%;
+      z-index: 999;
+  }
+
+  .arrowContainer2 {
+      margin-left: -2rem;
+  }
+
+  .sliderArrow2 {
+      color: #ffffff;
+      background: #0800006b;
+      z-index: 100;
+      height: 4rem;
+      width: 4rem;
+      position: absolute;
+      border-radius: 50%;
+      z-index: 999;
+  }
+
+  .skill p {
+      color: white;
+      font-size: 18px;
+      letter-spacing: 0.8px;
+      line-height: 1.5em;
+      margin: 14px 0 75px 0;
+  }
+
+  .skill-slider {
+    //   margin: 0 auto;
+      position: relative;
+  }
+
+  .skill-slider .item {
+      height: 250px;
+      // margin-left: 5rem;
+      position: relative;
+
+      h5 {
+          padding-top: 13rem;
+          padding-right: 5rem;
+          color: white;
+      }
+  }
+
+  .background-image-left {
+      top: 28%;
+      position: absolute;
+      bottom: 0;
+      width: 40%;
+      z-index: -4;
+      animation: key 7s linear infinite;
+  }
+
+  .background-image-top {
+      top: 50%;
+      position: absolute;
+      margin-top: -40rem;
+      margin-left: 50rem;
+      width: 40%;
+      z-index: -4;
+      animation: key 4s linear infinite;
+  }
+
+  @keyframes key {
+      0% {
+          transform: translateY(-20px);
+      }
+
+      50% {
+          transform: translateY(80px);
+      }
+
+      100% {
+          transform: translateY(-20px);
+      }
+  }
+
+  @media screen and (max-width: 767px) {
+      .skill {
+          width: 55%;
+         margin-left: 11.2rem;
+         margin-top: 15rem !important;
+      }
+
+      .arrowContainer {
+          margin-left: 17rem;
+      }
+
+      .skill-slider {
+          .image__container {
+              margin-left: 3rem;
+          }
+      }
+  }
+
+  @media screen and (device-width: 280px) {
+      .skill {
+          width: 30% !important;
+          margin-left: 12rem;
+
+          // margin-left: 10rem;
+          h2 {
+              font-size: 20px;
+              padding-top: 2rem;
+          }
+      }
+
+      .arrowContainer {
+          margin-left: 9rem;
+      }
+
+      .skill-slider {
+          .image__container {
+              margin-left: 0 !important;
+          }
+      }
+  }
+
+  @media screen and (min-width: 768px) and (max-width:1024px) {
+      .skill {
+          width: 100%;
+          margin-left: 6rem;
+      }
+
+      .arrowContainer {
+          margin-left: 44rem;
+      }
+
+      .skill-slider {
+          .image__container {
+              margin-left: 3rem;
+          }
+      }
+
+      .background-image-left {
+          margin-left: -8rem;
+      }
+  }
+
+  @media screen and (min-device-width: 1370px) {
+      .skill {
+          width: 100%;
+          margin-left: 6rem;
+
+          .background-image-left {
+              top: 0;
+              position: absolute;
+              bottom: 0;
+              width: 40%;
+              z-index: -4;
+              animation: key 7s linear infinite;
+              margin-left: -8rem;
+          }
+
+          .background-image-top {
+              top: 50%;
+              position: absolute;
+              margin-top: -40rem;
+              margin-left: 50rem;
+              width: 40%;
+              z-index: -4;
+              animation: key 4s linear infinite;
+              margin-left: 60rem;
+          }
+      }
+  }

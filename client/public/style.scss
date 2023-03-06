@@ -1,0 +1,160 @@
+//-- Color palette
+$background-color: #000000;
+$primary-color: #64fffe;
+$secondary-color: #242D49;
+
+//-- Loader config
+$loader-size: 300px;
+$loader-border-size: 10px;
+$loader-border: $loader-border-size solid rgba($primary-color, 0.8);
+$loader-shadow: 0px 0px 40px 0 $secondary-color;
+
+//-- Face config
+$face-size: 150px;
+$face-eye-size: 12px;
+$face-eye-space: 10px;
+
+//-- Common
+body {
+    background-color: $background-color;
+}
+
+//-- Loader wrapper
+.loader-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+//-- Loader
+.loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $loader-size;
+    height: $loader-size;
+    // overflow: hidden;
+    text-align: center;
+    box-shadow: none;
+    border: $loader-border;
+    border-radius: 100%;
+    animation: shadow 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+
+    //-- Particles.js
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0px 0px 2px $secondary-color);
+    }
+
+    &:after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        box-shadow: inset 0px 0px 40px 5px $secondary-color;
+        border-radius: 100%;
+    }
+
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        box-shadow: inset 0px 0px 0px 8px rgba(18, 17, 142, 0.38);
+        border-radius: 100%;
+    }
+
+    //-- Canvas
+    canvas {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 100%;
+    }
+
+    //-- Face
+    &--face {
+        position: absolute;
+        width: $face-size;
+        height: $face-size;
+
+        //-- Face eyes
+        &--eyes {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            display: flex;
+            margin: auto;
+            transform: translateX(-50%);
+
+            span {
+                margin-right: $face-eye-space;
+                margin-left: $face-eye-space;
+                width: $face-eye-size;
+                height: $face-eye-size;
+                background-color: $primary-color;
+                box-shadow: 0px 0px 40px 5px $secondary-color;
+                border-radius: 100%;
+            }
+        }
+
+        //-- Face smile
+        &--smile {
+            transform-origin: center center;
+            animation: rotate 2s linear infinite;
+            filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+
+            circle {
+                animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+                stroke-dasharray: 150, 200;
+                stroke-dashoffset: -10;
+                stroke-linecap: round;
+            }
+        }
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0px 0px 40px 2px $secondary-color;
+    }
+
+    50% {
+        box-shadow: 0px 0px 40px 0 $secondary-color;
+    }
+
+    100% {
+        box-shadow: 0px 0px 40px 2px $secondary-color;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}

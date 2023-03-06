@@ -1,0 +1,382 @@
+  :root {
+      --yellow: #F5C32C;
+      --orange: #BC2C33;
+      --yellowish: #bc2c337a;
+      --black: #242D49;
+      --gray: #788097;
+      --blueCard: #DDF8FE;
+      --purple: rgb(238 210 255);
+      --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+      --orangeCard: rgba(252, 166, 31, 0.45);
+      --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  }
+
+  .card {
+      //  height: 30vh !important; //this will be 100vh at certain width.
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.73), rgba(0, 0, 0, 0.609)), url(../../Assets/map.jpg);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      justify-content: center;
+      border-radius: 0%;
+      position: relative;
+      z-index: 9;
+
+      .secContainer {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          .title {
+              color: var(--blackColor);
+              line-height: 1.5rem;
+              padding-bottom: .5rem;
+              text-align: center;
+              padding-bottom: 2rem;
+          }
+
+          .videoCard {
+              margin-top: 2rem;
+
+              .videooCard {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+              }
+
+              .cardContent {
+                  gap: 2rem;
+                  padding: 2rem 1rem;
+
+                  .cardText {
+                      h2 {
+                          color: var(--whiteColor);
+                          font-weight: 600;
+                          padding-bottom: 1rem;
+                      }
+
+                      p {
+                          color: var(--whiteColor);
+                          opacity: .7;
+                          font-size: 12px;
+                          font-weight: 400;
+                          letter-spacing: 1px;
+                      }
+                  }
+              }
+
+              .cardVideo {
+                  border: 2px solid var(--whiteColor);
+                  height: 30rem;
+                  width: 95%;
+                  border-radius: 10px;
+                  overflow: hidden;
+
+                  video {
+                      height: 100%;
+                      width: 100%;
+                      position: relative;
+                      object-fit: cover;
+                      z-index: 999;
+                  }
+              }
+          }
+      }
+  }
+
+  .bubbleContainer {
+      position: relative;
+      width: 100%;
+      height: 2vh;
+      z-index: -1;
+
+      .bubbles {
+          position: relative;
+          display: flex;
+
+          span {
+              position: relative;
+              width: 30px !important;
+              height: 30px !important;
+              background: var(--black);
+              margin: 0 4px;
+              border-radius: 50%;
+              box-shadow: 0 0 0 10px #4FC3DC44,
+                  0 0 50px #4FC3DC,
+                  0 0 100px #4FC3DC;
+              animation: animate 10s linear infinite !important;
+              animation-duration: calc(20s/var(--i)) !important;
+
+              &:nth-child(even) {
+                  background: var(--orange);
+                  box-shadow: 0 0 0 10px #dc4f4f44,
+                      0 0 50px #dc4f4f67,
+                      0 0 100px #dc4f4f6c;
+              }
+
+              &:nth-child(1) {
+                  --i: 11;
+              }
+
+              &:nth-child(2) {
+                  --i: 13;
+              }
+
+              &:nth-child(3) {
+                  --i: 15;
+              }
+
+              &:nth-child(4) {
+                  --i: 26;
+              }
+
+              &:nth-child(5) {
+                  --i: 12;
+              }
+
+              &:nth-child(6) {
+                  --i: 19;
+              }
+
+              &:nth-child(7) {
+                  --i: 22;
+              }
+
+              &:nth-child(8) {
+                  --i: 14;
+              }
+
+              &:nth-child(9) {
+                  --i: 9;
+              }
+
+              &:nth-child(10) {
+                  --i: 25;
+              }
+
+              &:nth-child(11) {
+                  --i: 12;
+              }
+
+              &:nth-child(12) {
+                  --i: 17;
+              }
+
+              &:nth-child(13) {
+                  --i: 16;
+              }
+
+              &:nth-child(14) {
+                  --i: 19;
+              }
+
+              &:nth-child(15) {
+                  --i: 25;
+              }
+
+              &:nth-child(16) {
+                  --i: 20;
+              }
+
+              &:nth-child(17) {
+                  --i: 21;
+              }
+
+              &:nth-child(18) {
+                  --i: 13;
+              }
+
+              &:nth-child(19) {
+                  --i: 9;
+              }
+
+              &:nth-child(20) {
+                  --i: 21;
+              }
+
+              &:nth-child(21) {
+                  --i: 11;
+              }
+
+              &:nth-child(22) {
+                  --i: 12;
+              }
+
+              &:nth-child(23) {
+                  --i: 14;
+              }
+
+              &:nth-child(24) {
+                  --i: 30;
+              }
+
+              &:nth-child(25) {
+                  --i: 25;
+              }
+
+              &:nth-child(26) {
+                  --i: 9;
+              }
+
+              &:nth-child(27) {
+                  --i: 18;
+              }
+
+              &:nth-child(28) {
+                  --i: 20;
+              }
+
+              &:nth-child(29) {
+                  --i: 9;
+              }
+
+              &:nth-child(30) {
+                  --i: 25;
+              }
+
+              &:nth-child(31) {
+                  --i: 18;
+              }
+
+              &:nth-child(32) {
+                  --i: 20;
+              }
+
+              &:nth-child(33) {
+                  --i: 25;
+              }
+
+              &:nth-child(34) {
+                  --i: 15;
+              }
+
+              &:nth-child(35) {
+                  --i: 9;
+              }
+
+              &:nth-child(36) {
+                  --i: 16;
+              }
+
+              &:nth-child(37) {
+                  --i: 14;
+              }
+
+              &:nth-child(38) {
+                  --i: 11;
+              }
+
+              &:nth-child(39) {
+                  --i: 21;
+              }
+
+              &:nth-child(40) {
+                  --i: 16;
+              }
+
+              &:nth-child(41) {
+                  --i: 25;
+              }
+          }
+      }
+  }
+
+  @keyframes animate {
+      0% {
+          transform: translateY(5vh) scale(0);
+      }
+
+      100% {
+          transform: translateY(-90vh) scale(1);
+      }
+  }
+
+  // MEDIA QUERIES =======================================>
+  @media screen and (max-width: 767px) {
+      .card {
+          margin-top: 15rem;
+      }
+
+      .videooCard {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr) !important;
+          width: 20rem;
+          margin-left: -1.5rem;
+          gap: 3rem;
+      }
+
+      .bubbleContainer {
+          display: none;
+      }
+  }
+
+ 
+
+  @media screen and (device-width: 280px) {
+      .card {
+          margin-top: 15rem;
+      }
+  }
+
+  @media screen and (min-device-width: 360px) and (max-device-width: 375px) {
+      .card {
+          margin-top: 15rem;
+      }
+  }
+
+  @media screen and (min-device-width: 767px) and (max-device-width: 1024px) {
+      .card {
+          margin-top: 5rem !important;
+      }
+
+      .bubbleContainer {
+          display: none;
+      }
+  }
+
+  @media screen and (min-device-width: 1390px) {
+      .card {
+          margin-top: 5rem !important;
+      }
+
+      .bubbleContainer {
+          .bubbles {
+              span {
+                  animation: animationcard 10s linear infinite !important;
+                  animation-duration: calc(20s/var(--i)) !important;
+              }
+          }
+      }
+
+      @keyframes animationcard {
+          0% {
+              transform: translateY(5vh) scale(0);
+          }
+
+          100% {
+              transform: translateY(-55vh) scale(1);
+          }
+      }
+  }
+  @media screen and (device-width: 1280px) {
+     
+
+      .bubbleContainer {
+          .bubbles {
+              span {
+                  animation: anime 10s linear infinite !important;
+                  animation-duration: calc(20s/var(--i)) !important;
+              }
+          }
+      }
+
+      @keyframes anime {
+          0% {
+              transform: translateY(5vh) scale(0);
+          }
+
+          100% {
+              transform: translateY(-60vh) scale(1) ;
+          }
+      }
+  }

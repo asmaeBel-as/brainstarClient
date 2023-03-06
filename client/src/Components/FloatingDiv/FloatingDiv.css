@@ -1,0 +1,30 @@
+:root {
+  --yellow: #F5C32C;
+  --orange: #FCA61F;
+  --black: #242D49;
+  --gray: #788097;
+  --blueCard: #DDF8FE;
+  --whiteColorDeam: hsl(0, 0%, 95%);
+  --purple: rgb(238 210 255);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --orangeCard: rgba(252, 166, 31, 0.45);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+}
+
+.floating-div {
+  justify-content: space-around;
+  display: flex;
+  background: white;
+  box-shadow: var(--boxShadow);
+  border-radius: 17px;
+  align-items: center;
+  padding: 0px 28px 0px 0px;
+  height: 4.5rem;
+}
+.floating-div img {
+  transform: scale(0.4);
+}
+.floating-div span {
+  font-family: sans-serif;
+  font-size: 16px;
+}/*# sourceMappingURL=FloatingDiv.css.map */
