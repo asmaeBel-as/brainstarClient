@@ -82,6 +82,13 @@ const Navbar = () => {
                 horiSelector.style.width = activeWidthNewAnimWidth + "px";
               }
             });
+         window.addEventListener("scroll", function() {
+    const activeItemNewAnim = tabsNewAnim.querySelector(".active");
+    const itemPosNewAnimTop = activeItemNewAnim.offsetTop;
+    const itemPosNewAnimLeft = activeItemNewAnim.offsetLeft;
+    horiSelector.style.top = itemPosNewAnimTop + "px";
+    horiSelector.style.left = itemPosNewAnimLeft + "px";
+  });
        }, 100);
      }
      window.addEventListener("resize", handleResize);
