@@ -1,0 +1,225 @@
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&subset=latin-ext');
+
+a.edit-btn{
+    background-color: #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    padding:15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+a svg{
+    height:20px;
+}
+div.edit-row{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.blog-post {
+    display: flex;
+    background: #fff;
+    margin-bottom: 35px;
+	box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+	border-radius: 4px;
+	overflow: hidden;
+	transition: 0.3s;
+}
+
+.blog-post:hover {
+	box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+	transform: translateY(-5px);
+}
+
+.blog-post-thumbnail {
+	flex: 0 0 auto;
+    max-width: none;
+    max-height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 260px;
+}
+
+.blog-post-thumbnail-inner {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+	transition: 0.3s;
+}
+
+.blog-post-thumbnail-inner img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.blog-post-thumbnail-inner .blog-item-tag {
+	bottom: 20px;
+	left: 20px;
+	top: auto;
+	margin: 0;
+}
+
+.blog-post-content {
+	flex: 1;
+	padding: 35px;
+}
+
+.blog-post-content h3,
+.blog-post-content h3 a {
+	font-size: 22px;
+	line-height: 33px;
+	color: #333;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.blog-post-content h3 a:hover {
+	color: #66676b;
+}
+
+a.blog-post-info,
+.blog-post-info,
+.blog-post-date {
+	font-size: 14px;
+	color: #888;
+	margin-bottom: 10px;
+	display: inline-block;
+	background-color: #f0f0f0;
+	border-radius: 4px;
+	line-height: 20px;
+	padding: 4px 10px;
+	margin-right: 3px;
+	transition: 0.3s;
+}
+
+a.blog-post-info:hover {
+	color: #fff;
+	background-color: #66676b;
+}
+
+.blog-post-content p {
+	padding: 0;
+	margin: 0;
+	display: block;
+	color: #808080;
+}
+
+.blog-post-content a.button i.icon-feather-arrow-right {
+	font-size: 20px;
+	top: 4px;
+	left: -1px;
+	position: relative;
+	margin: 0 -5px;
+}
+
+.blog-post-info-list {
+	display: block
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 20px;
+    font-size: 17px;
+    line-height: 30px;
+    color: #888;
+    border-left: 5px solid #eee;
+}
+.blog-post.single-post { flex-direction: column; }
+.blog-post.single-post:hover { transform: none; }
+.blog-post.single-post .blog-post-thumbnail { width: 100%; height: 380px; }
+.blog-post.single-post p { margin-bottom: 20px; }
+
+/* Post Navigation */
+#posts-nav {
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	position: relative;
+	margin: 0;
+	display: inline-block;
+	min-height: 60px;
+}
+
+#posts-nav li span {
+	display: block;
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    line-height: 20px;
+    padding: 4px 10px;
+    margin-right: 3px;
+    transition: 0.3s;
+}
+
+#posts-nav li a:hover span {
+    background-color: #66676b;
+    color: #fff;
+}
+
+#posts-nav li {
+	position: absolute;
+	font-size: 18px;
+	font-weight: 500;
+	width: 50%;
+}
+
+#posts-nav li strong {
+	display: block;
+	font-weight: 500;
+}
+
+#posts-nav li a {
+	transition: transform 0.3s, color 0.3s 0s;
+	color: #333;
+	display: inline-block;
+	line-height: 28px;
+}
+
+#posts-nav li a:hover { color: #66676b; }
+
+#posts-nav li.next-post {
+	right: 0;
+	text-align: right;
+}
+
+#posts-nav li.prev-post {
+	left: 0;
+}
+
+#posts-nav li.next-post a { padding-right: 50px; }
+#posts-nav li.prev-post a { padding-left: 50px; }
+
+#posts-nav li.prev-post a:before,
+#posts-nav li.next-post a:before {
+	font-family: "Feather-Icons";
+	font-size: 30px;
+	position: absolute;
+	color: inherit;
+	top: 50%;
+	transform: translate3d(0,-50%,0);
+	transition: transform 0.3s;
+}
+
+#posts-nav li.next-post a:before {
+	right: 0;
+	content: "\e930";
+}
+
+#posts-nav li.prev-post a:before {
+	left: 0;
+	content: "\e92f"
+}
+
+#posts-nav li.next-post a:hover:before { transform: translate3d(5px,-50%,0); }
+#posts-nav li.prev-post a:hover:before { transform: translate3d(-5px,-50%,0); }
+

@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import img1 from "../../Assets/bg.jpg";
-import img2 from "../../Assets/bg-1.jpg";
 import { BsArrowRightShort } from "react-icons/bs";
-// import { MdKingBed } from "react-icons/md";
-// import { FaWifi } from "react-icons/fa";
-// import { MdBathtub } from "react-icons/md";
-// import { MdAirportShuttle } from "react-icons/md";
-// import { MdLocationOn } from "react-icons/md";
-// import { BsPlus } from "react-icons/bs";
-import Insta from "@iconscout/react-unicons/icons/uil-instagram";
-import Facebook from "@iconscout/react-unicons/icons/uil-facebook";
-import Twitter from "@iconscout/react-unicons/icons/uil-twitter";
-import Linkedin from "@iconscout/react-unicons/icons/uil-linkedin";
-import Search from "@iconscout/react-unicons/icons/uil-search";
+
 
 import './blog.css'
+import BlogPost from "../../BlogDesign/BlogPost";
+import SideBlog from "../../utilities/SideBlog";
 
 const blog = () => {
-
+  const [posts, setPosts] = useState([]);
+useEffect(() => {
+  fetch("http://localhost:4000/post").then((response) => {
+    response.json().then((posts) => {
+      setPosts(posts);
+    });
+  });
+}, []);
 
   return (
     <section className="wrapper" id="wrapper">
@@ -131,87 +129,11 @@ const blog = () => {
                
                 <h4>Recent Posts</h4>
               </div>
-              <a href="#" class="blog-post">
-                <div class="blog-post-thumbnail">
-                  <div class="blog-post-thumbnail-inner">
-                    <span class="blog-item-tag">Tips</span>
-                    <img src={img2} alt="" />
-                  </div>
-                </div>
-
-                <div class="blog-post-content">
-                  <span class="blog-post-date">22 July 2022</span>
-                  <h3>16 Ridiculously Easy Ways to Find & Keep a Remote Job</h3>
-                  <p>
-                    Efficiently myocardinate market-driven innovation via
-                    open-source alignments. Dramatically engage high-payoff
-                    infomediaries rather than.{" "}
-                  </p>
-                </div>
-
-                <div class="entry-icon"></div>
-              </a>
-
-              <a href="#" class="blog-post">
-                <div class="blog-post-thumbnail">
-                  <div class="blog-post-thumbnail-inner">
-                    <span class="blog-item-tag">Recruiting</span>
-                    <img src={img2} alt="" />
-                  </div>
-                </div>
-
-                <div class="blog-post-content">
-                  <span class="blog-post-date">29 June 2022</span>
-                  <h3>How to "Woo" a Recruiter and Land Your Dream Job</h3>
-                  <p>
-                    Efficiently myocardinate market-driven innovation via
-                    open-source alignments. Dramatically engage high-payoff
-                    infomediaries rather than.{" "}
-                  </p>
-                </div>
-              </a>
-
-              <a href="#" class="blog-post">
-                <div class="blog-post-thumbnail">
-                  <div class="blog-post-thumbnail-inner">
-                    <span class="blog-item-tag">Marketing</span>
-                    <img src={img2} alt="" />
-                  </div>
-                </div>
-
-                <div class="blog-post-content">
-                  <span class="blog-post-date">10 June 2022</span>
-                  <h3>
-                    11 Tips to Help You Get New Clients Through Cold Calling
-                  </h3>
-                  <p>
-                    Efficiently myocardinate market-driven innovation via
-                    open-source alignments. Dramatically engage high-payoff
-                    infomediaries rather than.{" "}
-                  </p>
-                </div>
-              </a>
-
-              <a href="#" class="blog-post">
-                <div class="blog-post-thumbnail">
-                  <div class="blog-post-thumbnail-inner">
-                    <span class="blog-item-tag">Tips</span>
-                    <img src={img2} alt="" />
-                  </div>
-                </div>
-
-                <div class="blog-post-content">
-                  <span class="blog-post-date">5 June 2022</span>
-                  <h3>
-                    5 Myths That Prevent Job Seekers from Overcoming Failure
-                  </h3>
-                  <p>
-                    Efficiently myocardinate market-driven innovation via
-                    open-source alignments. Dramatically engage high-payoff
-                    infomediaries rather than.{" "}
-                  </p>
-                </div>
-              </a>
+              {posts.length > 0 && posts.map(posts => (
+                <BlogPost {...posts} />
+              ))}
+            
+            
               <div class="clearfix"></div>
               <Row>
                 <Col md={12}>
@@ -246,111 +168,9 @@ const blog = () => {
             </Col>
             <Col xl={4} lg={4}>
               <div class="sidebar-container margin-top-65">
-                <div class="sidebar-widget margin-bottom-40">
-                  
-                </div>
+                <SideBlog/>
 
-                <div class="sidebar-widget">
-                  <h3>Trending Posts</h3>
-                  <ul class="widget-tabs">
-                    <li>
-                      <a href="#" class="widget-content active">
-                        <img src={img2} alt="" />
-                        <div class="widget-text">
-                          <h5>
-                            How to "Woo" a Recruiter and Land Your Dream Job
-                          </h5>
-                          <span>29 June 2022</span>
-                        </div>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="widget-content">
-                        <img src={img2} alt="" />
-                        <div class="widget-text">
-                          <h5>
-                            What It Really Takes to Make $100k Before You Turn
-                            30
-                          </h5>
-                          <span>3 June 2022</span>
-                        </div>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="#" class="widget-content">
-                        <img src={img2} alt="" />
-                        <div class="widget-text">
-                          <h5>
-                            5 Myths That Prevent Job Seekers from Overcoming
-                            Failure
-                          </h5>
-                          <span>5 June 2022</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="sidebar-widget">
-                  <h3>Social Profiles</h3>
-                  <div class="freelancer-socials margin-top-25">
-                    <ul>
-                      <li>
-                        <a
-                          href="#"
-                          title="Instagram"
-                          data-tippy-placement="top"
-                        >
-                          <Insta />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" title="Twitter" data-tippy-placement="top">
-                          <Twitter />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" title="LinkedIn" data-tippy-placement="top">
-                          <Linkedin />
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" title="Facebook" data-tippy-placement="top">
-                          <Facebook />
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="sidebar-widget">
-                  <h3>Tags</h3>
-                  <div class="task-tags">
-                    <a href="#">
-                      <span>employer</span>
-                    </a>
-                    <a href="#">
-                      <span>recruiting</span>
-                    </a>
-                    <a href="#">
-                      <span>work</span>
-                    </a>
-                    <a href="#">
-                      <span>salary</span>
-                    </a>
-                    <a href="#">
-                      <span>tips</span>
-                    </a>
-                    <a href="#">
-                      <span>income</span>
-                    </a>
-                    <a href="#">
-                      <span>application</span>
-                    </a>
-                  </div>
-                </div>
+                
               </div>
             </Col>
           </Row>

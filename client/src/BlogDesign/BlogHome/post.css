@@ -1,0 +1,33 @@
+.addPostWrapper{
+    width: 60%;
+    margin-left: 25rem;
+   
+    padding-top: 5rem;
+}
+.addPostWrapper input{
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 5px 7px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.addPostWrapper button{
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    background-color: #555;
+    border:0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 7px 0;
+
+}
+
+.addPostWrapper h1, h2{
+    color: black;
+}
+.addPostWrapper .updatebutton{
+    margin-bottom: 5rem !important;
+}

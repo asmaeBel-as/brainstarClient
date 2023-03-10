@@ -20,6 +20,15 @@ import Graphic from "./Components/graphic/graphic";
 import Digital from "./Components/digital/digital";
 import Companies from "./Components/Companies/companies";
 import MailShimpForm from "./Components/MailShimp/MailShimpForm";
+import BlogLogin from "./BlogDesign/BlogLogin/BlogLogin";
+import BlogHome from "./BlogDesign/BlogHome/BlogHome";
+import { UserContextProvider } from "./UserContext";
+import AddPost from "./BlogDesign/BlogHome/AddPost";
+import SideBar from "./BlogDesign/BlogSideBar/SideBar";
+import PostPage from "./BlogDesign/PostPage/PostPage";
+import EmailsPage from "./BlogDesign/EmailsPage";
+import PostEdit from "./BlogDesign/PostEdit";
+import Edit from "./BlogDesign/Edit";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -32,101 +41,181 @@ function App() {
   }
   return (
     !loading && (
-      <HashRouter>
-        <>
-          <Navbar />
-          <Routes>
-            <Route
-              index
-              element={
-                <>
-                  <Home />
-                  <AboutUs />
-                  <Founders />
-                  <Companies />
-                  <Services />
-                  <Counter />
-                  <Technologies />
-                  <Card />
-                  <Testimonials />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              exact
-              path="/contactUs"
-              element={
-                <>
-                  <ContactUs />
-                  <MailShimpForm />
-                  <Footer />
-                </>
-              }
-            />{" "}
-            <Route
-              exact
-              path="/blog"
-              element={
-                <>
-                  <Blog />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              exact
-              path="/services"
-              element={
-                <>
-                  <AppDev />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              exact
-              path="/graphic"
-              element={
-                <>
-                  <Graphic />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              exact
-              path="/mobile"
-              element={
-                <>
-                  <Mobile />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              exact
-              path="/web"
-              element={
-                <>
-                  <Web />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              exact
-              path="/digital"
-              element={
-                <>
-                  <Digital />
-                  <Footer />
-                </>
-              }
-            />
-          </Routes>
-        </>
-      </HashRouter>
+      <UserContextProvider>
+        <HashRouter>
+          <>
+            <Routes>
+              <Route
+                exact
+                path="/postEdit/:id"
+                element={
+                  <>
+                    <SideBar />
+                    <PostEdit />
+                  </>
+                }
+              ></Route>
+              <Route
+                exact
+                path="/create"
+                element={
+                  <>
+                    <SideBar />
+                    <AddPost />
+                  </>
+                }
+              ></Route>
+
+              <Route
+                exact
+                path="/adminBlog"
+                element={
+                  <>
+                    <BlogLogin />
+                  </>
+                }
+              ></Route>
+
+              <Route
+                exact
+                path="/BlogHome"
+                element={
+                  <>
+                    <BlogHome />
+                  </>
+                }
+              ></Route>
+              <Route
+                exact
+                path="/Emails"
+                element={
+                  <>
+                    <SideBar />
+                    <EmailsPage />
+                  </>
+                }
+              ></Route>
+              <Route
+                exact
+                path="/post/:id"
+                element={
+                  <>
+                    <Navbar />
+                    <PostPage />
+                  </>
+                }
+              ></Route>
+              <Route
+                path="/edit/:id"
+                element={
+                  <>
+                    <SideBar />
+                    <Edit />
+                  </>
+                }
+              />
+            </Routes>
+            <Routes>
+              <Route
+                index
+                element={
+                  <>
+                    <Navbar />
+                    <Home />
+                    <AboutUs />
+                    <Founders />
+                    <Companies />
+                    <Services />
+                    <Counter />
+                    <Technologies />
+                    <Card />
+                    <Testimonials />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/contactUs"
+                element={
+                  <>
+                    <Navbar />
+                    <ContactUs />
+                    <MailShimpForm />
+                    <Footer />
+                  </>
+                }
+              />{" "}
+              <Route
+                exact
+                path="/blog"
+                element={
+                  <>
+                    <Navbar />
+                    <Blog />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/services"
+                element={
+                  <>
+                    <Navbar />
+                    <AppDev />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/graphic"
+                element={
+                  <>
+                    <Navbar />
+                    <Graphic />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/mobile"
+                element={
+                  <>
+                    <Navbar />
+                    <Mobile />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/web"
+                element={
+                  <>
+                    <Navbar />
+                    <Web />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                exact
+                path="/digital"
+                element={
+                  <>
+                    <Navbar />
+                    <Digital />
+                    <Footer />
+                  </>
+                }
+              />
+            </Routes>
+          </>
+        </HashRouter>
+      </UserContextProvider>
     )
   );
 }
