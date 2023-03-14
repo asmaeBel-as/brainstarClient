@@ -7,9 +7,13 @@ import './Newsletter.css'
 
 const Newsletter = ({ onValidated, status, message }) => {
   const [email, setEmail] = useState("");
+  const [send, setSend] = useState("Send");
 
   useEffect(() => {
-    if (status === "success") clearFields();
+    if (status === "success")  clearFields() ;
+    if (status === "error") setSend("Failed");
+    if (status === "sending") setSend("sending...");
+    
   }, [status]);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,14 +26,11 @@ const Newsletter = ({ onValidated, status, message }) => {
 
   const clearFields = () => {
     setEmail("");
+    setSend("Send");
   };
     return (
-      <>
-        {status === "sending" && <Alert>Sending...</Alert>}
-        {status === "error" && <Alert variant="danger">{message}</Alert>}
-        {status === "success" && (
-          <Alert variant="success">{message}</Alert>
-        )}{" "}
+      <div className='mainNews'>
+        
         <div class="newsContainer">
           <img
             class="img-head"
@@ -60,11 +61,11 @@ const Newsletter = ({ onValidated, status, message }) => {
               />
             </div>
             <button class="submit" type="submit">
-              Submit
+              {send}
             </button>
           </form>
         </div>
-      </>
+      </div>
     );
 };
 

@@ -29,6 +29,8 @@ import PostPage from "./BlogDesign/PostPage/PostPage";
 import EmailsPage from "./BlogDesign/EmailsPage";
 import PostEdit from "./BlogDesign/PostEdit";
 import Edit from "./BlogDesign/Edit";
+import RecruitPage from "./BlogDesign/RecruitsPage";
+import Seo from "./Components/Seo/Seo";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -97,6 +99,16 @@ function App() {
               ></Route>
               <Route
                 exact
+                path="/Candidates"
+                element={
+                  <>
+                    <SideBar />
+                    <RecruitPage />
+                  </>
+                }
+              ></Route>
+              <Route
+                exact
                 path="/post/:id"
                 element={
                   <>
@@ -130,6 +142,8 @@ function App() {
                     <Technologies />
                     <Card />
                     <Testimonials />
+                    <Seo/>
+                    <MailShimpForm />
                     <Footer />
                   </>
                 }
@@ -141,7 +155,7 @@ function App() {
                   <>
                     <Navbar />
                     <ContactUs />
-                    <MailShimpForm />
+
                     <Footer />
                   </>
                 }

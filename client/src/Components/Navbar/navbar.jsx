@@ -246,6 +246,15 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                to={{ pathname: "/", hash: "seocheck" }}
+                exact
+              >
+                <i className="far fa-copy"></i>Seo check
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink className="nav-link" to="/blog" exact>
                 <i>
                   {" "}

@@ -9,11 +9,11 @@ const SideBlog = () => {
     return (
       <>
         {" "}
-        <div class="sidebar-widget">
+        <div class="sidebar-widgett">
           <h3>Featured Posts</h3>
-          <ul class="widget-tabs">
+          <ul class="widgett-tabs">
             <li>
-              <a href="#" class="widget-content active">
+              <a href="#" class="widgett-content active">
                 <img src={img2} alt="" />
                 <div class="widget-text">
                   <h5>About The Company</h5>
@@ -23,7 +23,7 @@ const SideBlog = () => {
             </li>
 
             <li>
-              <a href="#" class="widget-content">
+              <a href="#" class="widgett-content">
                 <img src={img2} alt="" />
                 <div class="widget-text">
                   <h5>What It Really Takes to Make $100k Before You Turn 30</h5>

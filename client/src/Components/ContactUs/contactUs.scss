@@ -1,3 +1,26 @@
+.separatorRec {
+    text-align: center;
+    // margin-bottom: -21rem;
+    margin-top: 10rem;
+    color: white;
+}
+
+.separatorRec::before,
+.separatorRec::after {
+    content: " ";
+    display: inline-block;
+    border-top: 2px solid #f7f4f4;
+    padding-bottom: 4px;
+    width: 15%;
+}
+
+.separatorRec::before {
+    margin-right: 12px;
+}
+
+.separatorRec::after {
+    margin-left: 12px;
+}
 .contact {
     background: linear-gradient(90.21deg, #BC2C33 -5.91%, #242D49 111.58%);
     padding: 100px 0 200px 0;

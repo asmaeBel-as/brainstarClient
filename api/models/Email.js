@@ -3,10 +3,8 @@ const { Schema, model } = mongoose;
 const EmailSchema = new Schema({
   email: String,
   firstName: String,
-  lastName: String,
   phone: String,
   message: String,
-  skype: String,
   file: String,
   budget: String,
 });

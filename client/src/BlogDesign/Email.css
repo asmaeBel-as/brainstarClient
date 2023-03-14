@@ -1,125 +1,112 @@
-.heading-primary {
-  font-size: 2em;
-  padding: 2em;
-  text-align: center;
+:root {
+  --header-background-color: #333;
+  --header-text-color: #fdfdfd;
+  --alternate-row-background-color: #ddd;
+  --table-width: 800px;
+  --column-one-width: 100px;
+  --column-two-width: 200px;
+  --column-three-width: 350px;
 }
 
-.accordion dl,
-.accordion-list {
-  border: 1px solid #ddd;
+.bgCntainer {
+  background: #00071d;
+  height: 100vh;
 }
-.accordion dl:after,
-.accordion-list:after {
-  content: "";
+
+.acontainer {
+  height: 5rem;
+}
+.acontainer .link {
+  border: 1px solid #131c31;
+  padding: 2rem;
+  color: white;
+  background: #131c31;
+  border-radius: 25px;
+}
+
+.fixed_headers {
+  width: -moz-fit-content;
+  width: fit-content;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-left: 20rem;
+  background: white;
+}
+
+.heightDiv {
+  height: 7rem;
+}
+
+.fixed_headers th {
+  text-decoration: underline;
+}
+
+.fixed_headers th,
+.fixed_headers td {
+  padding: 5px;
+  text-align: left;
+}
+
+.fixed_headers td:nth-child(1),
+.fixed_headers th:nth-child(1) {
+  min-width: var(--column-one-width);
+}
+
+.fixed_headers td:nth-child(2),
+.fixed_headers th:nth-child(2) {
+  min-width: var(--column-two-width);
+}
+
+.fixed_headers td:nth-child(3),
+.fixed_headers th:nth-child(3) {
+  width: var(--column-three-width);
+}
+
+.fixed_headers td:nth-child(4),
+.fixed_headers th:nth-child(4) {
+  width: var(--column-three-width);
+}
+
+.fixed_headers td:nth-child(5),
+.fixed_headers th:nth-child(5) {
+  width: var(--column-two-width);
+}
+
+.fixed_headers td:nth-child(6),
+.fixed_headers th:nth-child(6) {
+  width: var(--column-three-width);
+}
+
+.fixed_headers thead {
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
+}
+
+.fixed_headers thead tr {
   display: block;
-  height: 1em;
-  width: 100%;
-  background-color: #2ba659;
-}
-
-.accordion dd,
-.accordion__panel {
-  background-color: #eee;
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
-.accordion p {
-  padding: 1em 2em 1em 2em;
-}
-
-.accordion {
   position: relative;
-  background-color: #eee;
 }
 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2em 0 2em 0;
-}
-
-.accordionTitle,
-.accordion__Heading {
-  background-color: #38cc70;
-  text-align: center;
-  font-weight: 700;
-  padding: 2em;
+.fixed_headers tbody {
   display: block;
-  text-decoration: none;
-  color: #fff;
-  transition: background-color 0.5s ease-in-out;
-  border-bottom: 1px solid #30bb64;
-}
-.accordionTitle:before,
-.accordion__Heading:before {
-  content: "+";
-  font-size: 1.5em;
-  line-height: 0.5em;
-  float: left;
-  transition: transform 0.3s ease-in-out;
-}
-.accordionTitle:hover,
-.accordion__Heading:hover {
-  background-color: #2ba659;
+  overflow: auto;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.accordionTitleActive,
-.accordionTitle.is-expanded {
-  background-color: #2ba659;
-}
-.accordionTitleActive:before,
-.accordionTitle.is-expanded:before {
-  transform: rotate(-225deg);
+.fixed_headers tbody tr:nth-child(even) {
+  background-color: var(--alternate-row-background-color);
 }
 
-.accordionItem {
+.old_ie_wrapper {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: var(--table-width);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.old_ie_wrapper tbody {
   height: auto;
-  overflow: hidden;
-  max-height: 50em;
-  transition: max-height 1s;
-}
-@media screen and (min-width: 48em) {
-  .accordionItem {
-    max-height: 15em;
-    transition: max-height 0.5s;
-  }
-}
-
-.accordionItem.is-collapsed {
-  max-height: 0;
-}
-
-.no-js .accordionItem.is-collapsed {
-  max-height: auto;
-}
-
-.animateIn {
-  animation: accordionIn 0.45s normal ease-in-out both 1;
-}
-
-.animateOut {
-  animation: accordionOut 0.45s alternate ease-in-out both 1;
-}
-
-@keyframes accordionIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.9) rotateX(-60deg);
-    transform-origin: 50% 0;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes accordionOut {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.9) rotateX(-60deg);
-  }
 }/*# sourceMappingURL=Email.css.map */

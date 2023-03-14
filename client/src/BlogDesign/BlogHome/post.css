@@ -1,8 +1,11 @@
+.containerBack{
+background: #00071d;
+height: 100vh;
+}
 .addPostWrapper{
     width: 60%;
-    margin-left: 25rem;
-   
-    padding-top: 5rem;
+    margin-left: 20rem;
+    padding-top: 7rem;
 }
 .addPostWrapper input{
     display: block;
@@ -17,7 +20,7 @@
     cursor: pointer;
     width: 100%;
     display: block;
-    background-color: #555;
+    background-color:  #131c31;
     border:0;
     color: #fff;
     border-radius: 5px;

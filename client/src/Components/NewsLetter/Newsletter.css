@@ -80,4 +80,17 @@
   border-radius: 50px;
   margin: 0 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.6) !important;
+}
+
+.mainNews {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  .form-box {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }/*# sourceMappingURL=Newsletter.css.map */

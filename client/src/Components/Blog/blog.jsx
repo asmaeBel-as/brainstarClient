@@ -10,7 +10,7 @@ import BlogPost from "../../BlogDesign/BlogPost";
 import SideBlog from "../../utilities/SideBlog";
 
 const blog = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState({ data: [], pagination: {} });
 useEffect(() => {
   fetch("http://localhost:4000/post").then((response) => {
     response.json().then((posts) => {
@@ -22,103 +22,7 @@ useEffect(() => {
   return (
     <section className="wrapper" id="wrapper">
       <div class="section white padding-top-0 padding-bottom-60 full-width-carousel-fix">
-        <Container>
-          <Row>
-            <Col xl={12}>
-              <div class="blog-carousel">
-                <a href="#" class="blog-compact-item-container">
-                  <div class="blog-compact-item">
-                    <img src={img1} alt="" />
-                    <span class="blog-item-tag">Tips</span>
-                    <div class="blog-compact-item-content">
-                      <ul class="blog-post-tags">
-                        <li>20 May 2022</li>
-                      </ul>
-                      <h3>
-                        5 Myths That Prevent Job Seekers from Overcoming Failure
-                      </h3>
-                      <p>
-                        Distinctively reengineer revolutionary meta-services and
-                        premium architectures intuitive opportunities.
-                      </p>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="#" class="blog-compact-item-container">
-                  <div class="blog-compact-item">
-                    <img src={img1} alt="" />
-                    <span class="blog-item-tag">Recruiting</span>
-                    <div class="blog-compact-item-content">
-                      <ul class="blog-post-tags">
-                        <li>28 April 2022</li>
-                      </ul>
-                      <h3>12 Dog-Friendly Companies Hiring Now</h3>
-                      <p>
-                        Compellingly embrace empowered e-business after user
-                        friendly intellectual capital. Interactively front-end.
-                      </p>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="#" class="blog-compact-item-container">
-                  <div class="blog-compact-item">
-                    <img src={img1} alt="" />
-                    <span class="blog-item-tag">Marketing</span>
-                    <div class="blog-compact-item-content">
-                      <ul class="blog-post-tags">
-                        <li>10 June 2022</li>
-                      </ul>
-                      <h3>
-                        11 Tips to Help You Get New Clients Through Cold Calling
-                      </h3>
-                      <p>
-                        Compellingly embrace empowered e-business after user
-                        friendly intellectual capital. Interactively front-end.
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <a href="#" class="blog-compact-item-container">
-                  <div class="blog-compact-item">
-                    <img src={img1} alt="" />
-                    <span class="blog-item-tag">Recruiting</span>
-                    <div class="blog-compact-item-content">
-                      <ul class="blog-post-tags">
-                        <li>9 June 2022</li>
-                      </ul>
-                      <h3>Follow Up On Job Application With This Template</h3>
-                      <p>
-                        Appropriately empower dynamic leadership skills after
-                        business portals. Globally myocardinate interactive.
-                      </p>
-                    </div>
-                  </div>
-                </a>
-
-                <a href="#" class="blog-compact-item-container">
-                  <div class="blog-compact-item">
-                    <img src="images/blog-07a.jpg" alt="" />
-                    <span class="blog-item-tag">Recruiting</span>
-                    <div class="blog-compact-item-content">
-                      <ul class="blog-post-tags">
-                        <li>3 June 2022</li>
-                      </ul>
-                      <h3>
-                        What It Really Takes to Make $100k Before You Turn 30
-                      </h3>
-                      <p>
-                        Appropriately empower dynamic leadership skills after
-                        business portals. Globally myocardinate interactive.
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+       
       </div>
 
       <div class="section gray">

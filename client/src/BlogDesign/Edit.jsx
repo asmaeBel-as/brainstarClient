@@ -1,7 +1,7 @@
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Editor from "../Editor";
-import './BlogHome/post.css'
+import "./BlogHome/post.css";
 
 export default function Edit() {
   const { id } = useParams();
@@ -23,8 +23,8 @@ export default function Edit() {
   }, []);
 
   async function updatePost(ev) {
-      ev.preventDefault();
-      setUpdate("Updating...")
+    ev.preventDefault();
+    setUpdate("Updating...");
     const data = new FormData();
     data.set("title", title);
     data.set("summary", summary);
@@ -38,37 +38,42 @@ export default function Edit() {
       body: data,
       credentials: "include",
     });
-      if (response.ok) {
+    if (response.ok) {
       setUpdate("Update post");
       setRedirect(true);
-      } else {
-        alert('Failed to update post"');
+    } else {
+      alert('Failed to update post"');
     }
-    }
+  }
 
   if (redirect) {
     return <Navigate to={"/postEdit/" + id} />;
   }
 
-    return (
-        <div className="addPostWrapper">
-            <form onSubmit={updatePost}>
-      <input
-        type="title"
-        placeholder={"Title"}
-        value={title}
-        onChange={(ev) => setTitle(ev.target.value)}
-      />
-      <input
-        type="summary"
-        placeholder={"Summary"}
-        value={summary}
-        onChange={(ev) => setSummary(ev.target.value)}
-      />
-      <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
-      <Editor onChange={setContent} value={content} />
-                <button className="updatebutton" style={{ marginTop: "5px" }}>{update}</button>
-    </form></div>
-  
+  return (
+    <div className="containerBack">
+      {" "}
+      <div className="addPostWrapper">
+        <form onSubmit={updatePost}>
+          <input
+            type="title"
+            placeholder={"Title"}
+            value={title}
+            onChange={(ev) => setTitle(ev.target.value)}
+          />
+          <input
+            type="summary"
+            placeholder={"Summary"}
+            value={summary}
+            onChange={(ev) => setSummary(ev.target.value)}
+          />
+          <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
+          <Editor onChange={setContent} value={content} />
+          <button className="updatebutton" style={{ marginTop: "5px" }}>
+            {update}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }

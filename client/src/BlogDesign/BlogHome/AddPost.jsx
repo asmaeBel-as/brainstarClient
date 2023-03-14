@@ -32,7 +32,8 @@ const AddPost = () => {
        return <Navigate to={"/BlogHome"} />;
     }
   return (
-    <div className="addPostWrapper">
+    <div className="containerBack">
+      <div className="addPostWrapper">
       <form onSubmit={createNewPost}>
         <input
           type="title"
@@ -50,7 +51,8 @@ const AddPost = () => {
         <Editor value={content} onChange={setContent} />
         <button style={{ marginTop: "5px" }}>{ update}</button>
       </form>
-    </div>
+    </div></div>
+   
   );
 };
 

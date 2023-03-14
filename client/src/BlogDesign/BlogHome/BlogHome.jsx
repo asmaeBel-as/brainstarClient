@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
-import BlogNav from "../BlogNav/nav";
 import BlogPost from '../BlogPost';
 import SideBar from '../BlogSideBar/SideBar';
+import './post.css';
 
 const BlogHome = () => {
   const [posts, setPosts] = useState([]);
@@ -16,15 +16,16 @@ const BlogHome = () => {
   return (
     <>
       <SideBar />
-      <Container style={{marginLeft : '25rem'}}>
-        <Row><Col xl={8} lg={8}>
-          <div style={{marginTop : "5rem"}}></div>
-          {posts.length > 0 && posts.map((post) => <BlogPost {...post} />)}
-      </Col></Row>
+      <div style={{ backgroundColor: "#00071d"}}>
+        <Container style={{ marginLeft: "25rem" }}>
+          <Row>
+            <Col xl={8} lg={8}>
+              <div style={{ marginTop: "5rem" }}></div>
+              {posts.length > 0 && posts.map((post) => <BlogPost {...post} />)}
+            </Col>
+          </Row>
         </Container>
-      
-      
-      
+      </div>
     </>
   );
 }

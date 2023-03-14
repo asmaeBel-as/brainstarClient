@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "brainstrars",
+  "private_key_id": "6df899f70303ec386bfd5f9cd91b6c8780cdd2eb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCIPfE1A2ngrdRm\ndgXISAAXq50IT0m55e6w+r1BDvgQdtGCPNUxklvRqTpneHPmnobQtXPKsvBG7PlP\nHHvvb82oeqdlTP2GrGGLTRkUSrE2Zg4X8DoDVlXid+k5wv/tuSbERCnd5Qrx+L0b\nz1v56y6F4FTK8A+zBLnK4Cp1Slw+arphmf5BlzXd9C6W/Znn0BggIoDiX28t8o5d\nDVlzTXNY9KKO7CyFoQImvbNxDgUWUgA6gZglsccF8431xR+bN7O3NURpR57L8sbc\nF07oYQI8QFpwOssMy3HBqRtWBf1pbdqzOgAWhbhs6xcuV/hqf1eQ2REk+CBYtWUR\nNpH/Edh7AgMBAAECggEADLlANBPACRgi3HjMPHKg85T24uZIu+BB5OxdzVwhBaSb\nF18oB+ujwJZd2njw1gpbC9XOXRFOCEmsVNuTpX5bBg+CX58LlE64A2LtYyxAlZR9\nX3XzbQlclvxc3ySbcy+V88Fr6Ymw9n0k6Bp6/AGfRCh5ssQtqynXUh+SR4bsy3VY\nVa1jrxQT+a14QYa05NgXF8Vsxd095UdMAcVJXvavpYKXp1C9NBbTKzNSTW2z1LEJ\nEKlwTuWrKQxtB1qZOkdYd8P0qZeLb4A3DeDH5wKlY6+gae34fUpZDjMwb46G5kvH\nI17N1JMAH0QAauAmNk3SzII5kSfHRiw9hVarG5UQnQKBgQC6xpvqoaaLc953i0A3\nwn/bmE4Ai6y9tIfEvFsH/OQy7NmFSh/wuihdgxjNyM8H/NdgZzjCUIHDb+ne57vd\nleXqkp2xPVELEJUF1z70u6MdSwN2z4RR8AHNMYY95YWATNp4+sAOzDQwC2c38IMV\nMXXIo3sHFSgT8gTUp3breL8F5QKBgQC6vKdQJjauZezlHjqNj0gqonO2belEI3nq\nuw5Utu0luoqzc4BxYcYtzwTOM/Jkqq+Q7UI6WVxZDLz9zX4I0/YB+w+5lmdBxUsz\nmWDiNCn6gtCYhpNyWLYNsTtT8epFJ6xa4DFy1SCWXF2CZDnFEVek9LpTnnKxvnEA\nG5vJUGF+3wKBgDsQlbv0VMui38ZkJfG8M1zJZFlt0jnHvmuruQnkonGsTvmEwGcL\nJ7qyu4RQLZB0F9QnsF5awT6BxK62D8X6IlQ0+2NSZa+fFdFcCU+xitq3nyfSZiDX\nSmqOb8phK/+vziMWAOhtEU/kO0cIaxunoXzKnhxWR29PSNHLB6NdcuM1AoGAVrDo\nV9w1vIcTEFcVRczD6w8Z+xJRndF+cwu+HnQB6mcMpzyy33BNycx25afWGwfmk7ih\n62a66ZhxUL6KiVyls8uzRCxf6XfHbsAA62LeLi922ah4YThv5DFoYpNHeC1v5Yx5\nSF9LTqK4wqT28NcZQjpfGhzQEFZiLXOjwjTv3i8CgYAIg+K9hD3qb5wuMToRyihL\nyOXEclOaHSAC+QouF0MN+c9Zih7Vl4o3YuYLzwp6viDkmuleij6+8NXyo8dYDpm/\njwgbBFfs9w7MopZK7rGfh2vUPm2JUc1k1tItl8My/W48hr4iMQb+XmLo62d5HPmw\n72idkKxo3Vbd70HbudUMQg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "brainstars@brainstrars.iam.gserviceaccount.com",
+  "client_id": "101288458364813294432",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/brainstars%40brainstrars.iam.gserviceaccount.com"
+}
