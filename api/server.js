@@ -15,7 +15,7 @@ const { google } = require("googleapis");
 const fs = require("fs");
 const secret = "fgjlgka546yfgmlzqefoovnlmlkerf";
 const KEYFILEPATH =
-  "C:\\Users\\ASMAE\\Desktop\\jsonfile\\alpine-gasket-380515-76b80fc2870c.json";
+  "json-file-path";
 const SCOPES = ["https://www.googleapis.com/auth/drive"];
 const auth = new google.auth.GoogleAuth({
   keyFile: KEYFILEPATH,
@@ -33,10 +33,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 mongoose.connect(
-  "mongodb+srv://blog:MrJ3Cmgcq8ac986Z@cluster0.nb2qz68.mongodb.net/?retryWrites=true&w=majority"
+  "your mongodb link"
 );
-//adminsumit@123brain    this is the password
-// Multer configuration
+
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
     callback(null, "./api/uploads");
@@ -59,9 +58,9 @@ const upload = multer({ storage: storage });
 const postblog = multer({ storage: blogStorage });
 
 cloudinary.config({
-  cloud_name: "dlfntcxew",
-  api_key: "369615854988766",
-  api_secret: "ape8w8Z1MC17aeUYZFWyRZH7x2c",
+  cloud_name: "cloud-name",
+  api_key: "cloud-key",
+  api_secret: "api-secret",
 });
 // Route handler for sending email
 app.post("/send-email", upload.single("file"), async (req, res) => {
@@ -76,15 +75,15 @@ app.post("/send-email", upload.single("file"), async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "bellissadasmae459@gmail.com",
-      pass: "esbohykmhmuzrclp",
+      user: "your@gmail.com",
+      pass: "pass",
     },
   });
 
   // setup email data with unicode symbols
   const mailOptions = {
     from: email,
-    to: "bellissadasmae459@gmail.com",
+    to: "your-gmail",
     subject: "Brainstar form submission",
     html: ` <head>
         <style>
@@ -152,7 +151,7 @@ p {
   const driveService = google.drive({ version: "v3", auth });
   let fileMetaData = {
     name: originalname,
-    parents: ["1HI-ZPkLZJl3cZRGg0x91_PQq7NWJFzNR"],
+    parents: ["folder-id"],
   };
   let media = {
     mimeType: req.file.mimetype,
@@ -192,15 +191,15 @@ app.post("/recruit", upload.single("file"), async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "bellissadasmae459@gmail.com",
-      pass: "esbohykmhmuzrclp",
+      user: "your-email@gmail.com",
+      pass: "your-pass",
     },
   });
 
   // setup email data with unicode symbols
   const mailOptions = {
     from: email,
-    to: "bellissadasmae459@gmail.com",
+    to: "your-email@gmail.com",
     subject: "Brainstar, Hiring request",
     html: ` <head>
         <style>
@@ -263,7 +262,7 @@ app.post("/recruit", upload.single("file"), async (req, res) => {
     const driveService = google.drive({ version: "v3", auth });
     let fileMetaData = {
       name: originalname,
-      parents: ["1HI-ZPkLZJl3cZRGg0x91_PQq7NWJFzNR"],
+      parents: ["folder-id"],
     };
     let media = {
       mimeType: req.file.mimetype,
@@ -357,7 +356,7 @@ app.post("/seo", add.none(), async (req, res) => {
   });
   // setup email data with unicode symbols
   const mailOptions = {
-    from: "bellissadasmae459@gmail.com",
+    from: "your-email@gmail.com",
     to: email,
     subject: "Website Seo Check",
     html: ` 
@@ -460,5 +459,3 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
-//MrJ3Cmgcq8ac986Z
-//mongodb+srv://blog:MrJ3Cmgcq8ac986Z@cluster0.nb2qz68.mongodb.net/?retryWrites=true&w=majority
