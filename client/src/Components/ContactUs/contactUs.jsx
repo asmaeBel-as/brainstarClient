@@ -6,30 +6,24 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import shape from "../../Assets/footer.png";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Recruit from "./Recruit";
 
 function ContactUs() {
   const [buttonText, setButtonText] = useState("Send");
   const [file, setFile] = useState(null);
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [budget, setBudget] = useState("");
   const [message, setMessage] = useState("");
-  const [skype, setSkype] = useState("");
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
-   
-     setButtonText("Sending...");
+    setButtonText("Sending...");
     const formData = new FormData();
     formData.append("file", file);
     formData.append("email", email);
     formData.append("firstName", firstName);
-    formData.append("lastName", lastName);
     formData.append("phone", phone);
-    formData.append("skype", skype);
     formData.append("message", message);
     formData.append("budget", budget);
 
@@ -39,9 +33,7 @@ function ContactUs() {
 
         data: {
           firstName: firstName,
-          lastName: lastName,
           phone: phone,
-          skype: skype,
           message: message,
           budget: budget,
         },
@@ -50,10 +42,8 @@ function ContactUs() {
         if (
           !email ||
           !firstName ||
-          !lastName ||
           !message ||
           phone.length === 0 ||
-          skype.length === 0 ||
           budget.length === 0
         ) {
           Swal.fire({
@@ -66,12 +56,10 @@ function ContactUs() {
         console.log(response.data);
         setEmail("");
         setFirstName("");
-        setLastName("");
         setPhone("");
         setBudget("");
         setFile("");
         setMessage("");
-        setSkype("");
         Swal.fire({
           title: "Success!",
           text: "Email sent successfully!",
@@ -90,8 +78,6 @@ function ContactUs() {
         });
         setButtonText("Send");
       });
-    
-   
   };
 
   const handleFileChange = (event) => {
@@ -105,15 +91,8 @@ function ContactUs() {
     setFirstName(event.target.value);
   };
 
-  const handleLastNameChange = (event) => {
-    setLastName(event.target.value);
-  };
   const handlePhoneChange = (event) => {
     setPhone(event.target.value);
-  };
-
-  const handleSkypeChange = (event) => {
-    setSkype(event.target.value);
   };
   const handlebudgetChange = (event) => {
     setBudget(event.target.value);
@@ -140,20 +119,12 @@ function ContactUs() {
                 <h2>Get In Touch</h2>
                 <form onSubmit={handleSubmit}>
                   <Row>
-                    <Col size={12} sm={6} className="px-1">
+                    <Col size={12} sm={12} className="px-1">
                       <input
                         type="text"
                         value={firstName}
-                        placeholder="First Name"
+                        placeholder="Full Name"
                         onChange={handleFirstNameChange}
-                      />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input
-                        type="text"
-                        value={lastName}
-                        placeholder="Last Name"
-                        onChange={handleLastNameChange}
                       />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
@@ -172,16 +143,7 @@ function ContactUs() {
                         onChange={handlePhoneChange}
                       />
                     </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input
-                        type="text"
-                        value={skype}
-                        placeholder="Skype Id"
-                        onChange={handleSkypeChange}
-                      />
-                    </Col>
-
-                    <Col size={12} sm={6} className="px-1">
+                    <Col size={12} sm={12} className="px-1">
                       <select
                         class="form-select form-select-lg mb-3  px-1"
                         aria-label=".form-select-lg example"
@@ -222,7 +184,7 @@ function ContactUs() {
             </Col>
           </Row>
         </Container>
-        
+        <Recruit />
       </section>
       <div className="footer-image">
         <img src={shape} alt="Phot0 not responding" />
