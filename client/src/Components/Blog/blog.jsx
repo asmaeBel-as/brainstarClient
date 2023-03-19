@@ -39,7 +39,7 @@ useEffect(() => {
             
             
               <div class="clearfix"></div>
-              <Row>
+              {/* <Row>
                 <Col md={12}>
                   <div class="pagination-container margin-top-10 margin-bottom-20">
                     <nav class="pagination">
@@ -68,7 +68,7 @@ useEffect(() => {
                     </nav>
                   </div>
                 </Col>
-              </Row>
+              </Row> */}
             </Col>
             <Col xl={4} lg={4}>
               <div class="sidebar-container margin-top-65">

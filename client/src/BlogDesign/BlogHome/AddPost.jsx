@@ -19,10 +19,10 @@ const AddPost = () => {
     data.set("file", files[0]);
     ev.preventDefault();
     setUpdate('Creating...')
-   const response = await fetch("http://localhost:4000/post", {
-      method: "POST",
-      body: data,
-    });
+   const response = await fetch(`http://localhost:4000/post`, {
+     method: "POST",
+     body: data,
+   });
     if (response.ok) {
         setUpdate("Create post");
           setRedirect(true);

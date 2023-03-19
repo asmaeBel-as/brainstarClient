@@ -10,12 +10,11 @@ const Recruit = require("./models/Recruit");
 const Seo = require("./models/Seo");
 const bcrypt = require("bcryptjs");
 const cloudinary = require("cloudinary").v2;
-const readline = require("readline");
 const { google } = require("googleapis");
 const fs = require("fs");
 const secret = "fgjlgka546yfgmlzqefoovnlmlkerf";
 const KEYFILEPATH =
-  "C:\\Users\\ASMAE\\Desktop\\jsonfile\\alpine-gasket-380515-76b80fc2870c.json";
+  "C:\\Users\\ASMAE\\Desktop\\jsonfile\\centered-osprey-380923-0185c0c44731.json";
 const SCOPES = ["https://www.googleapis.com/auth/drive"];
 const auth = new google.auth.GoogleAuth({
   keyFile: KEYFILEPATH,
@@ -33,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 mongoose.connect(
-  "mongodb+srv://blog:MrJ3Cmgcq8ac986Z@cluster0.nb2qz68.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://brainstars:N16DDxztSWTrTglS@cluster0.3ceytfl.mongodb.net/?retryWrites=true&w=majority"
 );
 //adminsumit@123brain    this is the password
 // Multer configuration
@@ -59,9 +58,9 @@ const upload = multer({ storage: storage });
 const postblog = multer({ storage: blogStorage });
 
 cloudinary.config({
-  cloud_name: "dlfntcxew",
-  api_key: "369615854988766",
-  api_secret: "ape8w8Z1MC17aeUYZFWyRZH7x2c",
+  cloud_name: "dscytscix",
+  api_key: "698437971332934",
+  api_secret: "kK_JIgxY45lYa2t_2N_YXjKgS-A",
 });
 // Route handler for sending email
 app.post("/send-email", upload.single("file"), async (req, res) => {
@@ -76,15 +75,15 @@ app.post("/send-email", upload.single("file"), async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "bellissadasmae459@gmail.com",
-      pass: "esbohykmhmuzrclp",
+      user: "bstartechnologies@gmail.com",
+      pass: "agisyfbfyadpqkjo",
     },
   });
 
   // setup email data with unicode symbols
   const mailOptions = {
     from: email,
-    to: "bellissadasmae459@gmail.com",
+    to: "bstartechnologies@gmail.com",
     subject: "Brainstar form submission",
     html: ` <head>
         <style>
@@ -152,7 +151,7 @@ p {
   const driveService = google.drive({ version: "v3", auth });
   let fileMetaData = {
     name: originalname,
-    parents: ["1HI-ZPkLZJl3cZRGg0x91_PQq7NWJFzNR"],
+    parents: ["122V0fsa1tWESg2RQHK0ydvrcMD8BZfrB"],
   };
   let media = {
     mimeType: req.file.mimetype,
@@ -192,15 +191,15 @@ app.post("/recruit", upload.single("file"), async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "bellissadasmae459@gmail.com",
-      pass: "esbohykmhmuzrclp",
+      user: "bstartechnologies@gmail.com",
+      pass: "agisyfbfyadpqkjo",
     },
   });
 
   // setup email data with unicode symbols
   const mailOptions = {
     from: email,
-    to: "bellissadasmae459@gmail.com",
+    to: "bstartechnologies@gmail.com",
     subject: "Brainstar, Hiring request",
     html: ` <head>
         <style>
@@ -263,7 +262,7 @@ app.post("/recruit", upload.single("file"), async (req, res) => {
     const driveService = google.drive({ version: "v3", auth });
     let fileMetaData = {
       name: originalname,
-      parents: ["1HI-ZPkLZJl3cZRGg0x91_PQq7NWJFzNR"],
+      parents: ["122V0fsa1tWESg2RQHK0ydvrcMD8BZfrB"],
     };
     let media = {
       mimeType: req.file.mimetype,
@@ -351,13 +350,13 @@ app.post("/seo", add.none(), async (req, res) => {
     port: 587,
     secure: false,
     auth: {
-      user: "bellissadasmae459@gmail.com",
-      pass: "esbohykmhmuzrclp",
+      user: "bstartechnologies@gmail.com",
+      pass: "agisyfbfyadpqkjo",
     },
   });
   // setup email data with unicode symbols
   const mailOptions = {
-    from: "bellissadasmae459@gmail.com",
+    from: "bstartechnologies@gmail.com",
     to: email,
     subject: "Website Seo Check",
     html: ` 
@@ -386,6 +385,10 @@ app.post("/seo", add.none(), async (req, res) => {
 
 app.get("/post", async (req, res) => {
   const posts = await Post.find().sort({ createdAt: -1 }).limit(20);
+  res.json(posts);
+});
+app.get("/seo", async (req, res) => {
+  const posts = await Seo.find().sort({ createdAt: -1 }).limit(20);
   res.json(posts);
 });
 app.get("/recruit", async (req, res) => {
@@ -451,6 +454,17 @@ app.delete("/send-email", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+app.delete("/seo", async (req, res) => {
+  try {
+    // delete all documents from the email collection
+    await Seo.deleteMany({});
+
+    res.json({ message: "All emails deleted successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
@@ -460,5 +474,3 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
-//MrJ3Cmgcq8ac986Z
-//mongodb+srv://blog:MrJ3Cmgcq8ac986Z@cluster0.nb2qz68.mongodb.net/?retryWrites=true&w=majority

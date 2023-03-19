@@ -9,63 +9,67 @@ const SideBlog = () => {
     return (
       <>
         {" "}
-        <div class="sidebar-widgett">
-          <h3>Featured Posts</h3>
-          <ul class="widgett-tabs">
+        <div className="sidebar-widgett">
+          <h3>Brain Star Posts</h3>
+          <ul className="widgett-tabs">
             <li>
-              <a href="#" class="widgett-content active">
+              <a className="widgett-content active">
                 <img src={img2} alt="" />
-                <div class="widget-text">
-                  <h5>About The Company</h5>
+                <div className="widget-text">
+                  <h5>Brainstar Technologies</h5>
                   <span>29 June 2022</span>
                 </div>
               </a>
             </li>
 
             <li>
-              <a href="#" class="widgett-content">
-                <img src={img2} alt="" />
-                <div class="widget-text">
-                  <h5>What It Really Takes to Make $100k Before You Turn 30</h5>
+              <a className="widgett-content">
+                <img
+                  src="https://synergiseit.com.au/wp-content/uploads/2019/11/1-1170x782.png"
+                  alt=""
+                />
+                <div className="widget-text">
+                  <h5>We provide the best IT solutions </h5>
                   <span>3 June 2022</span>
                 </div>
               </a>
             </li>
 
             <li>
-              <a href="#" class="widget-content">
-                <img src={img2} alt="" />
-                <div class="widget-text">
-                  <h5>
-                    5 Myths That Prevent Job Seekers from Overcoming Failure
-                  </h5>
+              <a className="widgett-content">
+                <img
+                  src="https://www.michalsons.com/wp-content/uploads/2012/08/Business-Critical-Software-e1563875145259.jpg"
+                  alt=""
+                />
+                <div className="widget-text">
+                  <h5>We provide you from concept to finished products</h5>
                   <span>5 June 2022</span>
                 </div>
               </a>
             </li>
           </ul>
         </div>
-        <div class="sidebar-widget">
+        <div className="sidebar-widget">
           <h3>Social Profiles</h3>
-          <div class="freelancer-socials margin-top-25">
+          <div className="freelancer-socials margin-top-25">
             <ul>
               <li>
-                <a href="#" title="Instagram" data-tippy-placement="top">
+                <a title="Instagram" data-tippy-placement="top">
                   <Insta />
                 </a>
               </li>
               <li>
-                <a href="#" title="Twitter" data-tippy-placement="top">
+                <a title="Twitter" data-tippy-placement="top">
                   <Twitter />
                 </a>
               </li>
               <li>
-                <a href="#" title="LinkedIn" data-tippy-placement="top">
+                <a title="LinkedIn" data-tippy-placement="top">
                   <Linkedin />
                 </a>
               </li>
               <li>
-                <a href="#" title="Facebook" data-tippy-placement="top">
+                <a title="Facebook" data-tippy-placement="top">
                   <Facebook />
                 </a>
               </li>

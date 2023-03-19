@@ -31,6 +31,7 @@ import PostEdit from "./BlogDesign/PostEdit";
 import Edit from "./BlogDesign/Edit";
 import RecruitPage from "./BlogDesign/RecruitsPage";
 import Seo from "./Components/Seo/Seo";
+import SeoCheck from "./BlogDesign/SeoCheck";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -54,6 +55,16 @@ function App() {
                   <>
                     <SideBar />
                     <PostEdit />
+                  </>
+                }
+              ></Route>
+              <Route
+                exact
+                path="SeoApply"
+                element={
+                  <>
+                    <SideBar />
+                    <SeoCheck />
                   </>
                 }
               ></Route>
@@ -142,7 +153,7 @@ function App() {
                     <Technologies />
                     <Card />
                     <Testimonials />
-                    <Seo/>
+                    <Seo />
                     <MailShimpForm />
                     <Footer />
                   </>

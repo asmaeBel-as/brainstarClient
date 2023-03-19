@@ -65,11 +65,10 @@ const EmailsPage = () => {
             <tr>
               <th>Name</th>
               <th>Email</th>
-              <th>phone</th>
+              <th style={{ width: "50px" }}>phone</th>
               <th>Budget</th>
               <th>Message</th>
-              <th>File</th>
-
+              <th style={{ width: "50px" }}>File</th>
             </tr>
           </thead>
           <tbody>
@@ -78,10 +77,10 @@ const EmailsPage = () => {
                 <tr key={emails._id}>
                   <td>{emails.firstName} </td>
                   <td>{emails.email}</td>
-                  <td>{emails.phone}</td>
+                  <td style={{ width: "50px" }}>{emails.phone}</td>
                   <td>{emails.budget}</td>
                   <td>{emails.message}</td>
-                  <td>
+                  <td style={{ width: "50px" }}>
                     <a href={emails.file}>url</a>
                   </td>
                 </tr>
