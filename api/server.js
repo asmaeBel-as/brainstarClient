@@ -34,8 +34,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 mongoose.connect(
   "mongodb+srv://brainstars:N16DDxztSWTrTglS@cluster0.3ceytfl.mongodb.net/?retryWrites=true&w=majority"
 );
-//adminsumit@123brain    this is the password
-// Multer configuration
+
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
     callback(null, "./api/uploads");
@@ -474,3 +473,4 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
